@@ -11,7 +11,7 @@ export const productRepository = {
   },
 
   async getById(id: number): Promise<Product | undefined> {
-    return db.products.get(id);
+    return db.products.get(id as never);
   },
 
   async add(product: Product): Promise<number> {
@@ -19,10 +19,10 @@ export const productRepository = {
   },
 
   async update(id: number, product: Partial<Product>): Promise<number> {
-    return db.products.update(id, product);
+    return db.products.update(id as never, product);
   },
 
   async delete(id: number): Promise<void> {
-    return db.products.delete(id);
+    return db.products.delete(id as never);
   },
 };
